@@ -12,6 +12,21 @@ log日志暂时没做处理，等有了方案在解决
 目录位于 /usr/local/mydocker/ 下便于平台统一
 
 暂时应用如下：
+  * express
   * mysql 
   * redis
   * nginx
+  * ngrok
+
+## 服务器点 docker 服务
+
+开启 express web 服务
+docker run --name express -d mrsix/docker-express
+
+开启 ngrok 内网穿透服务
+docker run --name ngrok -p 4441:4441 -p 4442:4442 -p 4443:4443 -d  mrsix/my-ngrok
+
+开启 Nginx 反向代理
+
+docker run --name nginx -p 80:80 -p 443:443 -v /usr/local/mydocker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro --link express:express --link ngrok:ngrok -d mrsix/my-nginx
+
