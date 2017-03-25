@@ -7,7 +7,7 @@
     如 `python mujson_mgr.py -a -utest -p6666 -ktest -t100`
 参数说明：
 
-Actions:
+`Actions:
   -a ADD               add/edit a user
   -d DELETE            delete a user
   -e EDIT              edit a user
@@ -28,7 +28,7 @@ Options:
   -i MUID              set sub id to display (only work with -l)
 
 General options:
-  -h, --help           show this help message and exit
+  -h, --help           show this help message and exit`
 
 
 服务端运行与停止
