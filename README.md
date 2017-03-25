@@ -17,6 +17,7 @@ log日志暂时没做处理，等有了方案在解决
   * redis
   * nginx
   * ngrok
+  * shadowsocksr（暂未做成docker容器）
 
 ## 服务器点 docker 服务
 
