@@ -19,7 +19,7 @@ log日志暂时没做处理，等有了方案在解决
   * ngrok
   * shadowsocksr（暂未做成docker容器）
 
-## 服务器点 docker 服务
+## 服务器单个启动 docker 服务
 
 开启 express web 服务
 docker run --name express -d mrsix/docker-express
@@ -30,4 +30,11 @@ docker run --name ngrok -p 4441:4441 -p 4442:4442 -p 4443:4443 -d  mrsix/my-ngro
 开启 Nginx 反向代理
 
 docker run --name nginx -p 80:80 -p 443:443 -v /usr/local/mydocker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro --link express:express --link ngrok:ngrok -d mrsix/my-nginx
+
+## 使用docker-compose 启动应用
+* 编写 docker-compose.yml 文件
+* 填写相关配置项
+* 在目录运行 `docker-compose run` 来检测服务是否正常启动，如一切正常 Ctrl+C 结束
+* 使用 `docker-compose start` 启动项目，其会在后台运行，使用 `docker-compose logs`可查看相关日志
+[命令参考](https://yeasy.gitbooks.io/docker_practice/content/compose/commands.html)
 
