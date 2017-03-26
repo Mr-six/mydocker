@@ -1,0 +1,21 @@
+ngrok:
+  image: mrsix/my-ngrok
+  ports:
+    - "4441:4441"
+    - "4442:4442"
+    - "4443:4443"
+    - "4444:4444"
+    - "4445:4445"
+    - "4446:4446"
+    - "4447:4447"
+    - "4448:4448"
+    - "4449:4449"
+nginx:
+  image: mrsix/my-nginx
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - ngrok
+  volumes:
+    - /usr/local/mydocker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
