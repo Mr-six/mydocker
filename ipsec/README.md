@@ -12,7 +12,8 @@
 2. 主机上加载 IPsec NETKEY 内核模块
     `sudo modprobe af_key`
 3. 创建docker容器
-    `docker run \
+```
+    docker run \
     --name ipsec-server \
     --env-file ./vpn.env \
     --restart=always \
@@ -21,6 +22,7 @@
     -v /lib/modules:/lib/modules:ro \
     -d --privileged \
     hwdsl2/ipsec-vpn-server`
+```
 4. 查看链接情况：
     `docker exec -it ipsec-server ipsec whack --trafficstatus`
     
