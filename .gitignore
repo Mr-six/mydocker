@@ -1,3 +1,4 @@
 /mysql/database
+/mongo/database
 .DS_Store
 ipsec/vpn.env
