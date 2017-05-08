@@ -10,6 +10,9 @@
 log日志暂时没做处理，等有了方案在解决
 
 目录位于 /usr/local/mydocker/ 下便于平台统一
+```
+git clone https://github.com/Mr-six/mydocker.git
+```
 
 暂时应用如下：
   * express
@@ -34,7 +37,7 @@ docker run --name nginx -p 80:80 -p 443:443 -v /usr/local/mydocker/nginx/nginx.c
 ## 使用docker-compose 启动应用
 * 编写 docker-compose.yml 文件
 * 填写相关配置项
-* 在目录运行 `docker-compose run` 来检测服务是否正常启动，如一切正常 Ctrl+C 结束
+* 在目录运行 `docker-compose up` 来检测服务是否正常启动，如一切正常 Ctrl+C 结束
 * 使用 `docker-compose start` 启动项目，其会在后台运行，使用 `docker-compose logs`可查看相关日志
 [命令参考](https://yeasy.gitbooks.io/docker_practice/content/compose/commands.html)
 

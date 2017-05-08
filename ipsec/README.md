@@ -21,7 +21,7 @@
     -p 4500:4500/udp \
     -v /lib/modules:/lib/modules:ro \
     -d --privileged \
-    hwdsl2/ipsec-vpn-server`
+    hwdsl2/ipsec-vpn-server
 ```
 4. 查看链接情况：
     `docker exec -it ipsec-server ipsec whack --trafficstatus`
