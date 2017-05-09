@@ -68,6 +68,11 @@ git pull
 ## docker 版本
 暂时只生成一个账户，只是便于自己测试樱花docker以及个人使用
 
+生成image(在dockerfile目录下)
+```
+docker build mrsix/myssr .
+```
+
 环境变量
 ```
 ENV SERVER_ADDR 0.0.0.0 (服务器地址)
@@ -85,7 +90,8 @@ ENV DNS_ADDR_2  8.8.4.4
 docker run \
 --name myssr \
 -p 3333:3333 \
--e SERVER_PORT=3333 PASSWORD=test \
+-e SERVER_PORT=3333 \
+-e PASSWORD=test \
 --restart=always \
 -d mrsix/my-ssr
 ```
