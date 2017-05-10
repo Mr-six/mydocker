@@ -77,7 +77,7 @@ docker build mrsix/myssr .
 ```
 ENV SERVER_ADDR 0.0.0.0 (服务器地址)
 ENV SERVER_PORT 3333  （ssr端口）
-ENV PASSWORD    onepiece  （ssr密码）
+ENV PASSWORD    password  （ssr密码）
 ENV METHOD      aes-128-ctr   (加密方法)
 ENV PROTOCOL    auth_aes128_md5   （协议）
 ENV OBFS        tls1.2_ticket_auth_compatible    （混淆）
@@ -91,7 +91,7 @@ docker run \
 --name myssr \
 -p 3333:3333 \
 -e SERVER_PORT=3333 \
--e PASSWORD=test \
+-e PASSWORD=password \
 --restart=always \
 -d mrsix/my-ssr
 ```
