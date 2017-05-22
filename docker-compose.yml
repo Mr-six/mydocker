@@ -32,8 +32,8 @@ mysql_server:
 wx_nbs:
   image: mrsix/wx-nbs
   links:
-    - redis_server:redis_server
-    - mysql_server:mysql_server
+    - redis_server
+    - mysql_server
 
 nginx:
   image: nginx
