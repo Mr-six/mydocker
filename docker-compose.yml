@@ -20,7 +20,7 @@ redis_server:
   command: redis-server /usr/local/etc/redis/redis.conf
 
 mysql_server:
-  image: redis
+  image: mysql
   ports:
     - "3306:3306"
   volumes:
