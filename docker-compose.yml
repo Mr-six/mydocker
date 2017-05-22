@@ -13,7 +13,8 @@ ngrok:
 
 wx_nbs:
   image: mrsix/wx-nbs
-
+  net: "host"
+  
 nginx:
   image: nginx
   ports:
