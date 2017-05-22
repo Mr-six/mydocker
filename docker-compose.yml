@@ -11,10 +11,30 @@ ngrok:
     - "4448:4448"
     - "4449:4449"
 
+redis-server:
+  image: redis
+  ports:
+    - "6379:6379"
+  volumes:
+    - /usr/local/mydocker/redis/redis.conf:/usr/local/etc/redis/redis.conf
+  command: redis-server /usr/local/etc/redis/redis.conf
+
+mysql-server:
+  image: redis
+  ports:
+    - "3306:3306"
+  volumes:
+    - /usr/local/mydocker/mysql/cof:/etc/mysql/conf.d
+    - /usr/local/mydocker/mysql/database:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+
 wx_nbs:
   image: mrsix/wx-nbs
-  net: "host"
-  
+  links:
+    - redis-server
+    - mysql-server
+    
 nginx:
   image: nginx
   ports:
