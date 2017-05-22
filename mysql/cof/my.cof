@@ -7,7 +7,8 @@ collation-server = utf8_general_ci
 init_connect = 'SET collation_connection = utf8_general_ci'
 init_connect = 'SET NAMES utf8'
 lower_case_table_names = 1  #表名大小写不敏感
-default-storage-engine=INNODB
+performance_schema = off
+# default-storage-engine=INNODB
 
 [mysql.server]
 default-character-set = utf8
