@@ -13,7 +13,9 @@ ngrok:
 
 wx_nbs:
   image: mrsix/wx-nbs
-
+  links:
+    - mysql-server
+    - redis-server
 nginx:
   image: nginx
   ports:
