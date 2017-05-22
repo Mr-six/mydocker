@@ -26,3 +26,4 @@
   `docker run --name redis-server -v /usr/local/mydocker/redis/redis.conf:/usr/local/etc/redis/redis.conf -d  redis redis-server /usr/local/etc/redis/redis.conf ` 
 
   1. 取消了暴露端口的命令，程序采用 --link 获取通信
+docker run --name redis-server -v /usr/local/mydocker/redis/redis.conf:/usr/local/etc/redis/redis.conf -d  redis
