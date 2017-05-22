@@ -11,7 +11,7 @@ ngrok:
     - "4448:4448"
     - "4449:4449"
 
-redis-server:
+redis_server:
   image: redis
   ports:
     - "6379:6379"
@@ -19,7 +19,7 @@ redis-server:
     - /usr/local/mydocker/redis/redis.conf:/usr/local/etc/redis/redis.conf
   command: redis-server /usr/local/etc/redis/redis.conf
 
-mysql-server:
+mysql_server:
   image: redis
   ports:
     - "3306:3306"
@@ -34,7 +34,7 @@ wx_nbs:
   links:
     - redis-server
     - mysql-server
-    
+
 nginx:
   image: nginx
   ports:
