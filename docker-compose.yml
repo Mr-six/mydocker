@@ -19,21 +19,21 @@ redis_server:
     - /usr/local/mydocker/redis/redis.conf:/usr/local/etc/redis/redis.conf
   command: redis-server /usr/local/etc/redis/redis.conf
 
-mysql_server:
-  image: mysql
-  ports:
-    - "3306:3306"
-  volumes:
-    - /usr/local/mydocker/mysql/cof:/etc/mysql/conf.d
-    - /usr/local/mydocker/mysql/database:/var/lib/mysql
-  environment:
-    - MYSQL_ROOT_PASSWORD=root
+# VPS内存太小暂不开启mysql
+# mysql_server:
+#   image: mysql
+#   ports:
+#     - "3306:3306"
+#   volumes:
+#     - /usr/local/mydocker/mysql/cof:/etc/mysql/conf.d
+#     - /usr/local/mydocker/mysql/database:/var/lib/mysql
+#   environment:
+#     - MYSQL_ROOT_PASSWORD=root
 
 wx_nbs:
   image: mrsix/wx-nbs
   links:
     - redis_server
-    - mysql_server
 
 nginx:
   image: nginx
