@@ -1,6 +1,6 @@
 ## docker 版本
 暂时只生成一个账户，只是便于自己测试樱花docker以及个人使用
-
+首先感谢[breakwa11](https://github.com/breakwa11/shadowsocks-rss) 提供的软件
 1. 手动生成image(在dockerfile目录下)
 ```
 docker build mrsix/myssr .
