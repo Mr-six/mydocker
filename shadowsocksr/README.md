@@ -1,5 +1,35 @@
+## docker 版本
+暂时只生成一个账户，只是便于自己测试樱花docker以及个人使用
+
+生成image(在dockerfile目录下)
+```
+docker build mrsix/myssr .
+```
+
+环境变量
+```
+ENV SERVER_ADDR 0.0.0.0 (服务器地址)
+ENV SERVER_PORT 3333  （ssr端口）
+ENV PASSWORD    password  （ssr密码）
+ENV METHOD      aes-128-ctr   (加密方法)
+ENV PROTOCOL    auth_aes128_md5   （协议）
+ENV OBFS        tls1.2_ticket_auth_compatible    （混淆）
+ENV TIMEOUT     300    （超时）
+ENV DNS_ADDR    8.8.8.8
+ENV DNS_ADDR_2  8.8.4.4
+```
+开启方法
+```
+docker run \
+--name myssr \
+-p 3333:3333 \
+-e SERVER_PORT=3333 \
+-e PASSWORD=password \
+--restart=always \
+-d mrsix/my-ssr
+```
+
 ## shadowsocksr命令
-暂时shadowsocksr安装在当前主机下，以后解决端口暴露问题后，打算将其放入docker中。
 
 用户操作
     python mujson_mgr.py
@@ -65,33 +95,3 @@ git pull
 
 成功后重启ssr服务
 
-## docker 版本
-暂时只生成一个账户，只是便于自己测试樱花docker以及个人使用
-
-生成image(在dockerfile目录下)
-```
-docker build mrsix/myssr .
-```
-
-环境变量
-```
-ENV SERVER_ADDR 0.0.0.0 (服务器地址)
-ENV SERVER_PORT 3333  （ssr端口）
-ENV PASSWORD    password  （ssr密码）
-ENV METHOD      aes-128-ctr   (加密方法)
-ENV PROTOCOL    auth_aes128_md5   （协议）
-ENV OBFS        tls1.2_ticket_auth_compatible    （混淆）
-ENV TIMEOUT     300    （超时）
-ENV DNS_ADDR    8.8.8.8
-ENV DNS_ADDR_2  8.8.4.4
-```
-开启方法
-```
-docker run \
---name myssr \
--p 3333:3333 \
--e SERVER_PORT=3333 \
--e PASSWORD=password \
---restart=always \
--d mrsix/my-ssr
-```
