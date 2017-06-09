@@ -1,9 +1,15 @@
 ## docker 版本
 暂时只生成一个账户，只是便于自己测试樱花docker以及个人使用
 
-生成image(在dockerfile目录下)
+1. 手动生成image(在dockerfile目录下)
 ```
 docker build mrsix/myssr .
+```
+
+2. 或者直接使用dockerhub上的image
+
+```
+docker pull mrsix/my-ssr
 ```
 
 环境变量
